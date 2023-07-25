@@ -1,0 +1,91 @@
+$darkblue: #131313;
+$gray: #818189;
+$orange: #f29c1d;
+$whiteish: #fdfbfb;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    
+}
+#root {
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+html {
+    height: 100vh;
+    width: 100vw;
+    padding: 0px;
+    margin: 0px;
+    background-color: $whiteish;
+    overflow: hidden;
+    .topNav {
+        height: 10vh;
+        background-color: $whiteish;
+        width: 100vw;
+        font-family: 'Dancing Script', cursive;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        color: $darkblue;
+        gap: 8vh;
+        margin-top: 5vh;
+        .fa {
+            font-size: 4vh;
+            
+        }
+        h1 {
+            background-color: none;
+        }
+        .ShoppingCartHolder {
+
+            .Counter {
+                position: absolute;
+                height: 4vh;
+                width: 4vh;
+                right: 6.5vh;
+                z-index: 1;
+                border-radius: 100%;
+                border: .1vh solid $darkblue;
+                color: $darkblue;
+                font-size: 1vh;
+                font-weight: 700;
+
+                h1 {
+                    margin-top: .7vh;
+                }
+                
+            }
+
+        }
+    }
+    .categories {
+        height: auto;
+        padding: 2vh 2vh;
+        display: flex;
+        flex-direction: row;
+        gap: 2vh;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .Categorie {
+            height: auto;
+            width: auto;
+            padding: .5vh 3vh;
+            border: .7vh solid $gray;
+            border-radius: 3vh;
+            outline: none;
+            color: $darkblue;
+        }
+    }
+
+}
