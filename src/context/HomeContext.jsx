@@ -5,16 +5,18 @@ import axios from "axios";
 export const HomeContext = createContext(null);
 export const HomeContextProvider = (props) => {
 
+    const [items, setItems] = useState(null);
+
     useEffect(() => {
-        axios.get('https://fakestoreapi.com/products')
+        axios.get('https://makeup-api.herokuapp.com/api/v1/products.json?brand=nyx')
         .then(res => res.data)
-        .then(a => console.log(a))
+        .then(a => setItems(a))
         .catch(err => {
             console.error("This is error:", err);
         })
     }, [])
 
-const contextValue={}
+const contextValue={items}
 
 return <HomeContext.Provider value={contextValue}>
     {props.children}

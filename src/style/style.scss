@@ -88,4 +88,23 @@ html {
         }
     }
 
+    .items-grid{
+        height: 80vh;
+        display: grid;
+        width: 100vw;
+        grid-template-columns: repeat(auto-fit, minmax(20vh, 1fr));
+        grid-gap: 2vh;
+        overflow-y: auto;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .es {
+        height: 15vh;
+        min-width: 100vw;
+        
+    }
+
 }
