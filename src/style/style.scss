@@ -79,6 +79,8 @@ html {
             align-items: center;
             overflow-x: hidden;
             .cart--Nav {
+                position: fixed;
+                top: 5%;
                 min-height: 20px;
                 min-width: 100%;
                 display: flex;
@@ -90,7 +92,6 @@ html {
                 color: $whiteish;
                 padding: 0px 0px;
                 margin-left: 7vh;
-                padding-top: 10vh;
                 font-weight: 200;
                 .empty--button {
                     background-color: $darkblue;
@@ -104,18 +105,120 @@ html {
                     }
                 }
             }
+            .cart--items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                width: 80vw;
+                color: $whiteish;
+                margin-top: 40vh;
+                .cart--Item {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+                    gap: 2vh; /* Gap between the two items */
+                    padding: 1vh;
+                    border-radius: 1vh;
+                    max-width: 80vw;
+                    margin: 0 auto;
+                    .right-block {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        gap: 3.5vh;
+                    }
+                    .left-block {
+                        height: 100%;
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .name-desc {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1vh;
+                    }
+                    .product--name {
+                        font-family: 'IBM Plex Sans', sans-serif;
+                        font-weight: 600;
+                        font-size: 3.2vh;
+                        text-align: left;
+                    }
+                    .product--desc {
+                        font-size: 3vh;
+                        line-height: 2.2vh;
+                        text-align: left;
+                        font-family: 'IBM Plex Sans', sans-serif;
+                    }
+                    .add--Quantity, .remove--Quantity {
+                        font-size: 4.5vh;
+                        height: 3.5vh;
+                        width: 3.5vh;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                        color: $whiteish;
+                        font-weight: bold;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        
+                    }
+                    .add--Quantity {
+                        p {
+                            margin-top: -.5vh;
+                        }
+                    }
+                    .pricing--quantity {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        gap: 2vh;
+
+                        p {
+                            
+                        font-family: 'IBM Plex Sans', sans-serif;
+                        font-weight: bold;
+                        }
+                    }
+        
+                    .add--To--Cart {
+                        width: 100%;
+                        padding: 0.5vh 0vh;
+                        align-items: center;
+                        background-color: $darkblue;
+                        color: $whiteish;
+                        font-family: 'IBM Plex Sans', sans-serif;
+                        font-weight: bold;
+                        outline: none;
+                        border: none;
+                    }
+                    .price--Span {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                    }
+                }
+            }
             .pay--button {
                 background-color: $whiteish;
                 outline: none;
                 border: none;
                 position: fixed;
-                bottom: 5%;
+                bottom: 15%;
                 color: $darkblue;
                 width: 90vw;
-                
+                font-weight: bold;
+                font-size: 2.6vh;
                 height: 5vh;
             }
             .price--container {
+                position: fixed;
+                bottom: 2%;
                 height: auto;
                 width: auto;
                 font-size: 2.8vh;
