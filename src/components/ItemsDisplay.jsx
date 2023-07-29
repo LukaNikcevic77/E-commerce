@@ -4,7 +4,7 @@ import { HomeContext } from "../context/HomeContext";
 
 function ItemsDisplay(){
 
-    const {items} = useContext(HomeContext);
+    const {items, addItem} = useContext(HomeContext);
 
     useEffect(() => {console.log(items)}, [items])
 
@@ -38,7 +38,9 @@ return (
                     </span>
 
                     <span>
-                <button className="add--To--Cart">
+                <button className="add--To--Cart"
+                onClick={() => addItem({id: item.id, image_link: item.image_link,
+                name: item.name, category: item.product_type, price: item.price})}>
 
                 <p>{item.price}{item.price_sign}</p>
                 </button>
