@@ -35,53 +35,58 @@ export const HomeContextProvider = (props) => {
     const [total, setTotal] = useState(0);
     const [prevCategory, setPrevCategory] = useState('');
     const addItem = (a) => {
-        const index = cartItems.findIndex((item) => a.id == item.id);
-        console.log("Index:", index)
-        
-        if(index != -1){
-            
-            let fakeArray = [...cartItems];
-            fakeArray[index].quantity += 1;
-            setCartItems(fakeArray);
-            const newPrice = Number(a.price) + total;
-            setTotal(newPrice);
+        const index = cartItems.findIndex((item) => a.id === item.id);
+        console.log("Index:", index);
+      
+        const priceInCents = Math.round(parseFloat(a.price) * 100); // Convert price to cents
+        let newTotalInCents = total * 100; // Convert total to cents
+      
+        if (index !== -1) {
+          let fakeArray = [...cartItems];
+          fakeArray[index].quantity += 1;
+          setCartItems(fakeArray);
+      
+          newTotalInCents += priceInCents;
+          setTotal(newTotalInCents / 100); // Convert total back to dollars (with two decimal places)
+        } else {
+          let newItem = { ...a, quantity: 1 };
+          let fakeArray = [...cartItems, newItem];
+          setCartItems(fakeArray);
+      
+          newTotalInCents += priceInCents;
+          setTotal(newTotalInCents / 100); // Convert total back to dollars (with two decimal places)
         }
-        else {
-            let newItem = a;
-            newItem.quantity = 1;
-            let fakeArray = [...cartItems, newItem];
-            setCartItems(fakeArray);
-        
-            const newPrice = Number(a.price) + total;
-            setTotal(newPrice);
-            
-        }
-        
+      
         console.log("real:", cartItems);
-    }
-    const removeItem = (a) => {
-        const index = cartItems.findIndex((item) => a.id == item.id);
-        console.log("Index:", index)
-        let fakeArray = [...cartItems];
-        
-        if(fakeArray[index].quantity == 1){
-            
+      };
+      
+      const removeItem = (a) => {
+        const index = cartItems.findIndex((item) => a.id === item.id);
+        console.log("Index:", index);
+      
+        if (index !== -1) {
+          let fakeArray = [...cartItems];
+      
+          if (fakeArray[index].quantity === 1) {
+            const removedItemPriceInCents = Math.round(parseFloat(a.price) * 100); // Convert price to cents
             fakeArray.splice(index, 1);
             setCartItems(fakeArray);
-            const newPrice =  total - Number(a.price);
-            setTotal(newPrice);
-        }
-        else {
+      
+            const newTotalInCents = total * 100 - removedItemPriceInCents;
+            setTotal(newTotalInCents / 100); // Convert total back to dollars (with two decimal places)
+          } else {
             fakeArray[index].quantity -= 1;
             setCartItems(fakeArray);
-        
-            const newPrice =  total - Number(a.price);
-            setTotal(newPrice);
-            
+      
+            const removedItemPriceInCents = Math.round(parseFloat(a.price) * 100); // Convert price to cents
+            const newTotalInCents = total * 100 - removedItemPriceInCents;
+            setTotal(newTotalInCents / 100); // Convert total back to dollars (with two decimal places)
+          }
         }
-        
+      
         console.log("real:", cartItems);
-    }
+      };
+      
     useEffect(() => {
         getItems(prevCategory, '');
     }, [])
