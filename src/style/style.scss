@@ -4,6 +4,7 @@ $orange: #f29c1d;
 $whiteish: #fdfbfb;
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap');
 
 * {
     padding: 0px;
@@ -63,6 +64,45 @@ html {
             }
 
         }
+        .cart {
+            position: absolute;
+            background-color: $darkblue;
+            opacity: 0.9;
+            min-width: 100vw;
+            min-height: 200vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-x: hidden;
+            .cart--Nav {
+                min-height: 20px;
+                min-width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 4vh;
+                gap: 14vh;
+                color: $whiteish;
+                padding: 0px 5vh;
+                padding-top: 10vh;
+                font-weight: 200;
+                .empty--button {
+                    background-color: $darkblue;
+                    color: $whiteish;
+
+                    opacity: 1;
+                    outline: none;
+                    border: none;
+                }
+            }
+            .pay--button {
+                background-color: $whiteish;
+                color: $darkblue;
+                width: 100vw;
+                height: 20vh;
+            }
+        }
     }
     .categories {
         height: auto;
@@ -81,7 +121,7 @@ html {
             height: auto;
             width: auto;
             padding: .5vh 3vh;
-            border: .7vh solid $gray;
+            border: 1vh solid $gray;
             border-radius: 3vh;
             outline: none;
             color: $darkblue;
@@ -93,13 +133,65 @@ html {
         display: grid;
         width: 100vw;
         grid-template-columns: repeat(auto-fit, minmax(30vh, 1fr));
+
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
+            
+        }
         grid-gap: 2vh;
         overflow-y: auto;
-
+        
         .item {
             display: grid;
             grid-template-columns: 1fr 1fr; /* Two columns with equal width */
-            gap: 0px; /* Gap between the two items */
+            gap: 2vh; /* Gap between the two items */
+            padding: 1vh;
+            border-radius: 1vh;
+            max-width: 80vw;
+            margin: 0 auto;
+            .right-block {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                gap: 2.5vh;
+            }
+            .left-block {
+                height: 100%;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .name-desc {
+                display: flex;
+                flex-direction: column;
+                gap: 1vh;
+            }
+            .product--name {
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 600;
+                font-size: 2.2vh;
+                text-align: left;
+            }
+            .product--desc {
+                font-size: 2vh;
+                line-height: 2.2vh;
+                text-align: left;
+                font-family: 'IBM Plex Sans', sans-serif;
+            }
+
+            .add--To--Cart {
+                width: 100%;
+                padding: 0.5vh 0vh;
+                align-items: center;
+                background-color: $darkblue;
+                color: $whiteish;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: bold;
+                outline: none;
+                border: none;
+            }
         }
 
          img {
