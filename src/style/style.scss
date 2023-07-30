@@ -2,7 +2,14 @@ $darkblue: #131313;
 $gray: #818189;
 $orange: #f29c1d;
 $whiteish: #fdfbfb;
-
+/* 
+    Breakpoints used: 
+    max-width: 479px -- small mobile devices
+    min-width: 480px and max-width: 767px -- mobile devices
+    min-width: 768px and max-width: 991px -- small Tablets and Large Mobile Devices 
+    min-width: 992px and max-width: 1199px -- Tablets and Desktops
+    min-width: 1200px -- Desktops and larger stuff
+    */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap');
 
@@ -25,6 +32,7 @@ html {
     background-color: $whiteish;
     overflow: hidden;
     user-select: none;
+    -webkit-user-select: none;
     .topNav {
         height: 10vh;
         background-color: $whiteish;
@@ -43,6 +51,12 @@ html {
         }
         h1 {
             background-color: none;
+            @media (min-width: 768px) and (max-width: 991px) {
+                font-size: 7vw;
+            }
+            @media (min-width: 992px){
+                font-size: 5vw;
+            }
         }
         .ShoppingCartHolder {
             .Counter {
@@ -56,9 +70,20 @@ html {
                 color: $darkblue;
                 font-size: 1vh;
                 font-weight: 700;
-               
+                @media (min-width: 768px) and (max-width: 991px) {
+                    right: 12.5vw;
+                }
+                @media (min-width: 992px){
+                    right: 14.5vw;
+                }
                 h1 {
                     margin-top: .7vh;
+                    @media (min-width: 768px) and (max-width: 991px) {
+                        font-size: 3vw;
+                    }
+                    @media (min-width: 992px){
+                        font-size: 1.5vw;
+                    }
                 }
                 
             }
@@ -94,6 +119,27 @@ html {
                 padding: 0px 0px;
                 margin-left: 7vh;
                 font-weight: 200;
+
+                @media (min-width: 414px) and (max-width: 896px) {
+                    gap: 21vw;
+                }
+                @media (min-width: 768px) and (max-width: 991px) {
+                    gap: 30vw;
+                    
+                }
+                @media (min-width: 992px){
+                   gap: 40vw;
+                }
+                @media (min-width: 1366px){
+                    gap: 42vw;
+                }
+                h1 {
+                    @media (min-width: 768px) and (max-width: 991px) {
+                        font-size: 10vw;
+                    }
+                   
+                }
+
                 .empty--button {
                     background-color: $darkblue;
                     color: $whiteish;
@@ -114,16 +160,21 @@ html {
                     flex-direction: column;
                     align-items: left;
                     justify-content: center;
-                    padding-left: 1vw;
-                    margin-left: 2vw;
+                    padding-left: 2vh;
+                    margin-left: 0.5vh;
                     border-radius: 1vw;
                     outline: none;
                     border: none;
                     cursor: pointer;
                     font-family: 'IBM Plex Sans', sans-serif;
+                    font-weight: bold;
+                    font-size: 3vh;
                     &:hover {
                         cursor: pointer;
                     }
+                    @media (min-width: 1366px){
+                        margin-left: 5vw;
+                     }
                 }
             }
             .cart--items {
@@ -156,6 +207,10 @@ html {
                 font-weight: bold;
                 font-size: 2.6vh;
                 height: 5vh;
+
+                @media (min-width: 1366px){
+                    font-size: 2vw;
+                 }
                 }
 
                 .cart--Item {
@@ -166,23 +221,37 @@ html {
                     border-radius: 1vh;
                     max-width: 80vw;
                     margin: 0 auto;
-
-                
-                       
-                    
-
+                    @media (min-width: 992px){
+                        height: 50%;
+                        gap: 5vw;
+                    }
+                   
                     .right-block {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-around;
                         gap: 3.5vh;
+                        @media (min-width: 992px){
+                            height: 80%;
+                        }
                     }
                     .left-block {
                         height: 100%;
+                        
+                        
                         img {
                             height: 100%;
                             width: 100%;
                             object-fit: cover;
+                            
+                            @media (min-width: 992px){
+                                height: 20vw;
+                                width: 20vw;
+                            }
+                            @media (min-width: 1366px){
+                                height: 15vw;
+                                width: 15vw;
+                            }
                         }
                         .smaller--Image {
                             height: 100%;
@@ -226,6 +295,11 @@ html {
                     .add--Quantity {
                         p {
                             margin-top: -.5vh;
+
+                            @media (min-width: 768px) and (max-width: 991px) {
+                                margin-top: -0.5vw;
+                            }
+                            
                         }
                     }
                     .pricing--quantity {
@@ -233,7 +307,12 @@ html {
                         flex-direction: row;
                         justify-content: space-around;
                         gap: 2vh;
-
+                        @media (min-width: 414px) and (max-width: 896px) {
+                            font-size: 5vw;
+                        }
+                        @media (min-width: 992px){
+                            font-size: 2.5vw;
+                        }
                         p {
                             
                         font-family: 'IBM Plex Sans', sans-serif;
@@ -255,6 +334,21 @@ html {
                             background-color: $orange;
                             opacity: 1;
                         }
+                        
+                        @media (min-width: 414px) and (max-width: 896px) {
+                            font-size: 5vw;
+                        }
+                        @media (min-width: 768px) and (max-width: 991px) {
+                            font-size: 3vw;
+                        }
+                        @media (min-width: 1366px){
+                            font-size: 2vw;
+                         }
+                         @media (min-width: 1024px){
+                            font-size: 2vw;
+                         }
+                        
+                        
                     }
                     .price--Span {
                         display: flex;
@@ -274,6 +368,10 @@ html {
                 font-weight: bold;
                 font-size: 2.6vh;
                 height: 5vh;
+
+                @media (min-width: 1366px){
+                    font-size: 1.8vw;
+                }
             }
             .price--container {
                 position: fixed;
@@ -285,6 +383,14 @@ html {
                 p {
                     font-family: 'IBM Plex Sans', sans-serif;
                     font-weight: bold;
+                }
+                @media (min-width: 1366px){
+                   font-size: 2vw;
+                }
+                h1 {
+                    @media (min-width: 1366px){
+                        font-size: 3.5vw;
+                    }
                 }
             }
         }
@@ -303,6 +409,7 @@ html {
         }
         
         .Categorie {
+
             height: auto;
             width: auto;
             padding: .5vh 3vh;
@@ -325,7 +432,10 @@ html {
         }
         grid-gap: 2vh;
         overflow-y: auto;
-        
+        scrollbar-width: none;
+                &::-webkit-scrollbar {
+                display: none;
+        }
         .item {
             display: grid;
             grid-template-columns: 1fr 1fr; /* Two columns with equal width */
@@ -376,6 +486,16 @@ html {
                 font-weight: bold;
                 outline: none;
                 border: none;
+
+                @media (min-width: 414px) and (max-width: 896px) {
+                    font-size: 5vw;
+                }
+                @media (min-width: 768px) and (max-width: 991px) {
+                    font-size: 3vw;
+                }
+                @media (min-width: 992px){
+                    font-size: 1.5vw;
+                }
             }
         }
 
