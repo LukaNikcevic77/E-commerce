@@ -225,6 +225,11 @@ html {
                         height: 50%;
                         gap: 5vw;
                     }
+                    @media (min-width: 1366px) {
+                        width: 50%;
+            
+                        
+                    }
                    
                     .right-block {
                         display: flex;
@@ -233,6 +238,12 @@ html {
                         gap: 3.5vh;
                         @media (min-width: 992px){
                             height: 80%;
+                        }
+                        @media (min-width: 1366px) {
+                            gap: 2.5vw;
+                            width: 100%;
+                
+                            
                         }
                     }
                     .left-block {
@@ -252,6 +263,7 @@ html {
                                 height: 15vw;
                                 width: 15vw;
                             }
+                            
                         }
                         .smaller--Image {
                             height: 100%;
@@ -306,12 +318,19 @@ html {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-around;
+                        align-items: center;
+                
                         gap: 2vh;
                         @media (min-width: 414px) and (max-width: 896px) {
                             font-size: 5vw;
                         }
                         @media (min-width: 992px){
                             font-size: 2.5vw;
+                        }
+                        @media (min-width: 1366px) {
+                            font-size: 2vw;
+                            
+                            
                         }
                         p {
                             
@@ -407,6 +426,23 @@ html {
         &::-webkit-scrollbar {
             display: none;
         }
+        @media (min-width: 1024px) {
+            gap: 1.7vw;
+            
+        } 
+        @media (min-width: 1366px) {
+            gap: 2.5vw;
+            width: 100%;
+
+            
+        }
+        @media (min-width: 1920px) {
+            gap: 4.5vw;
+            width: 100vw;
+
+            
+        }
+
         
         .Categorie {
 
@@ -457,6 +493,7 @@ html {
                     width: 100%;
                     object-fit: cover;
                 }
+              
             }
             .name-desc {
                 display: flex;
