@@ -17,7 +17,7 @@ return (
     <>
     <div className='topNav'>
       <FontAwesomeIcon icon={faMagnifyingGlass} className="fa" 
-      onClick={() => { setShowSearch(true); console.log(showSearch)}}/>
+      onClick={() => { setShowSearch(true); (showSearch)}}/>
         <h1>NYX</h1>
         <span className="ShoppingCartHolder"  onClick={() => {if(!showSearch){setShowCart('100vw')}}}>
         <span className="Counter" >

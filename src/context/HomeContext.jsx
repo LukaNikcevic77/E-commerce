@@ -9,7 +9,7 @@ export const HomeContextProvider = (props) => {
   const url = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=nyx';
 
     const getItems = (prevCategory, b) => {
-        console.log("This is b:", b);
+      
 
         if(b === '' || prevCategory === b){
             axios.get('https://makeup-api.herokuapp.com/api/v1/products.json?brand=nyx')
@@ -41,7 +41,7 @@ export const HomeContextProvider = (props) => {
 
     const addItem = (a) => {
         const index = cartItems.findIndex((item) => a.id === item.id);
-        console.log("Index:", index);
+        
       
         const priceInCents = Math.round(parseFloat(a.price) * 100); // Convert price to cents
         let newTotalInCents = total * 100; // Convert total to cents
@@ -62,12 +62,12 @@ export const HomeContextProvider = (props) => {
           setTotal(newTotalInCents / 100); // Convert total back to dollars (with two decimal places)
         }
       
-        console.log("real:", cartItems);
+        
       };
       
       const removeItem = (a) => {
         const index = cartItems.findIndex((item) => a.id === item.id);
-        console.log("Index:", index);
+      
       
         if (index !== -1) {
           let fakeArray = [...cartItems];
@@ -89,7 +89,7 @@ export const HomeContextProvider = (props) => {
           }
         }
       
-        console.log("real:", cartItems);
+       
       };
       
     useEffect(() => {

@@ -466,6 +466,11 @@ html {
             grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
             
         }
+        @media (min-width: 1366px) {
+            font-size: 2vw;
+            margin-left: -3vw;
+            
+        }
         grid-gap: 2vh;
         overflow-y: auto;
         scrollbar-width: none;
